@@ -178,22 +178,21 @@ Fuentes: Anton (headline) + Montserrat (texto)
       position:relative;
       z-index:3; /* imagen SIEMPRE encima del blob */
       display:flex;
-      justify-content:cen
+      justify-content:center;
+      align-items:flex-end;
+      margin-top:2rem;
+    }
     .sticker{
-      /*
-        IMPORTANTE:
-        Antes usábamos un contenedor blanco para SIMULAR el borde tipo sticker.
-        Como ahora la imagen YA ES UN PNG con borde blanco y transparencia,
-        debemos eliminar ese fondo y padding para no crear un rectángulo blanco.
-      */
       display:inline-block;
-      background: transparent; /* <- clave: sin fondo */
-      padding: 0;               /* <- quitamos el padding */
-      border-radius: 0;         /* <- no forzamos forma */
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
       box-shadow: 0 18px 40px rgba(0,0,0,0.25);
-      transform: translateY(6px);
+      transform: translateY(8px);
       max-width:520px;
       width:100%;
+      position:relative;
+      z-index:3; /* refuerzo: nunca tapado */
     }
     .sticker img{
       /*
