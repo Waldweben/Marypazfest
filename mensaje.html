@@ -1,95 +1,205 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mensaje — MAR Y PAZ FEST 2024</title>
 
-    <title>Mensaje</title>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #F2DED9;
+      --container-max: 1100px;
+    }
 
-    <style>
-        /* =========================
-       FONDO Y TEXTURA
-       ========================= */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background-color: var(--bg);
+    }
 
-        body {
-            margin: 0;
-            min-height: 100vh;
-            background-color: #F2DED9;
-            /* mismo color base */
-            position: relative;
-            overflow-x: hidden;
-            font-family: sans-serif;
-        }
+    /* Textura de fondo (misma que en index) */
+    body::before{
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image: url("images/texture-pink.jpg");
+      background-repeat: repeat;
+      background-position: center;
+      opacity: 0.32;
+      pointer-events: none;
+      z-index: 0;
+    }
 
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background-image: url("images/texture-pink.jpg");
-            background-repeat: repeat;
-            background-position: center;
-            opacity: 0.3;
-            z-index: 0;
-            pointer-events: none;
-        }
+    /* Contenido sobre la textura */
+    .content-layer {
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
+      box-sizing: border-box;
+    }
 
-        /* Sección del video */
-.video-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  box-sizing: border-box;
-}
+    /* Espaciado general por seccion */
+    .section {
+      padding: 2.5rem 1rem;
+    }
 
-/* Contenedor responsivo 16:9 */
-.video-wrapper {
-  width: 100%;
-  max-width: 900px;
-  aspect-ratio: 16 / 9;
-  background: #000;
-}
+    /* Visual helpers: cajas para ver el "esqueleto" (quítalos al final) */
+    .skeleton {
+      border: 3px solid #111;
+      border-radius: 6px;
+      background: rgba(255,255,255,0.02);
+      padding: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 72px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
 
-/* iframe ocupa todo el contenedor */
-.video-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+    /* Banner */
+    .banner-title {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      margin: 0;
+    }
 
-        /* =========================
-       CAPA DE CONTENIDO
-       ========================= */
+    /* Video wrapper: mantiene 16:9 y respeta max-width */
+    .video-wrapper {
+      width: 100%;
+      max-width: var(--container-max);
+      aspect-ratio: 16 / 9;
+      background: #000;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .video-wrapper iframe{ width:100%; height:100%; border:0; display:block; }
 
-        .content-layer {
-            position: relative;
-            z-index: 1;
-            /* todo el contenido va delante del fondo */
-            min-height: 100vh;
-        }
-    </style>
+    /* Image wrapper */
+    .image-wrapper {
+      width: 100%;
+      max-width: var(--container-max);
+      margin-left: auto;
+      margin-right: auto;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .image-wrapper img {
+      width: 100%;
+      max-width: 1000px;
+      height: auto;
+      object-fit: contain;
+      display:block;
+      border-radius: 6px;
+    }
+
+    /* Map wrapper */
+    .map-wrapper {
+      width: 100%;
+      max-width: var(--container-max);
+      aspect-ratio: 16 / 9;
+      margin-left:auto;
+      margin-right:auto;
+    }
+    .map-wrapper iframe{ width:100%; height:100%; border:0; display:block; }
+
+    /* Responsive spacing tweaks */
+    @media (max-width: 768px) {
+      .section { padding: 1.4rem .8rem; }
+      .banner-title { font-size: clamp(1.4rem, 7vw, 2rem); }
+      .skeleton { min-height: 60px; }
+    }
+  </style>
 </head>
-
 <body>
 
-    <!-- CONTENIDO DE LA PÁGINA MENSAJE -->
-    <div class="content-layer">
-        <div class="video-section">
-            <div class="video-wrapper">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/49LcfSnsP_A?si=tgXXrJEU8ijb8_E_"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <div class="content-layer">
+
+    <!-- ====== BANNER ====== -->
+    <section class="section banner-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <!-- Esqueleto del banner: sustituye por tu título final -->
+            <div class="skeleton">
+              <h1 class="banner-title">MAR Y PAZ FEST 2024</h1>
             </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-    </div>
+    <!-- ====== VIDEO ====== -->
+    <section class="section video-section">
+      <div class="container d-flex justify-content-center">
+        <div class="row w-100 justify-content-center">
+          <div class="col-12">
+            <!-- Reemplaza VIDEO_ID_AQUI por el id real -->
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/VIDEO_ID_AQUI"
+                title="Mensaje de la festejada"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <!-- Si quieres ver la caja de esqueleto en lugar del iframe temporalmente,
+                 reemplaza la div.video-wrapper por:
+                 <div class="skeleton" style="min-height:260px;">VIDEO (placeholder)</div>
+            -->
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <!-- ====== IMAGEN ====== -->
+    <section class="section image-section">
+      <div class="container d-flex justify-content-center">
+        <div class="row w-100 justify-content-center">
+          <div class="col-12">
+            <div class="image-wrapper">
+              <!-- Sustituye la ruta por tu imagen real -->
+              <img src="images/message-image.jpg" alt="Imagen del mensaje (placeholder)">
+              <!-- O si prefieres placeholder:
+              <div class="skeleton" style="min-height:300px; width:100%;">IMAGEN (placeholder)</div>
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== MAPA ====== -->
+    <section class="section map-section">
+      <div class="container d-flex justify-content-center">
+        <div class="row w-100 justify-content-center">
+          <div class="col-12">
+            <div class="map-wrapper">
+              <!-- Reemplaza el src con tu URL de Google Maps embebido -->
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!..." 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+              </iframe>
+              <!-- O placeholder:
+              <div class="skeleton" style="min-height:280px;">MAPA (placeholder)</div>
+              -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Bootstrap JS (opcional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
