@@ -148,6 +148,25 @@ main, .container, #app {
   right: 5%;
 }
 
+/* -----------------------------ANIMACION------------------------------------------*/
+/* Estado inicial: oculto */
+.fade-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Estado animado */
+.fade-in {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
   </style>
 </head>
@@ -165,18 +184,18 @@ main, .container, #app {
         <div class="col-md-8 image-column">
 
   <!-- BLOBS (decoración) -->
-  <div class="blob blob-1"></div>
-  <div class="blob blob-2"></div>
+  <div class="blob blob-1 fade-item"></div>
+  <div class="blob blob-2 fade-item"></div>
 
   <!-- STICKER -->
-  <div class="sticker-wrapper">
+  <div class="sticker-wrapper fade-item">
     <img src="images/photo-sticker.png" alt="Foto del festejado">
   </div>
 
 </div>
         <!-- COLUMNA TEXTO -->
     <div class="col-md-4 d-flex align-items-center justify-content-center">
-      <div class="box text-box">
+      <div class="box text-box fade-item">
          <h1 class="title">
     MAR Y<br>
     PAZ FEST
@@ -186,7 +205,28 @@ main, .container, #app {
     </div>
 
   </div>
+<script>
+  window.addEventListener('load', () => {
+    const blobs = document.querySelectorAll('.blob');
+    const text = document.querySelector('.text-box');
+    const sticker = document.querySelector('.sticker-wrapper');
 
+    // 1. Blobs
+    setTimeout(() => {
+      blobs.forEach(blob => blob.classList.add('fade-in'));
+    }, 200);
+
+    // 2. Texto
+    setTimeout(() => {
+      text.classList.add('fade-in');
+    }, 600);
+
+    // 3. Sticker
+    setTimeout(() => {
+      sticker.classList.add('fade-in');
+    }, 1000);
+  });
+</script>
 </body>
 
 
