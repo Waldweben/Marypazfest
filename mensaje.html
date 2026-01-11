@@ -194,22 +194,39 @@
         </section>
 
         <!-- ====== IMAGEN ====== -->
-        <section class="section image-section">
-            <div class="container d-flex justify-content-center">
-                <div class="row w-100 justify-content-center">
-                    <div class="col-12">
-                        <div class="image-wrapper">
-                            <!-- Sustituye la ruta por tu imagen real -->
-                            <img src="images/message-image.jpg" alt="Imagen del mensaje (placeholder)">
-                            <!-- O si prefieres placeholder:
-              <div class="skeleton" style="min-height:300px; width:100%;">IMAGEN (placeholder)</div>
-              -->
+        <section class="section menu-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10">
+
+                        <div class="accordion" id="menuAccordion">
+
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingMenu">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#collapseMenu" aria-expanded="false"
+                                        aria-controls="collapseMenu">
+                                        MENÚ
+                                    </button>
+                                </h2>
+
+                                <div id="collapseMenu" class="accordion-collapse collapse" aria-labelledby="headingMenu"
+                                    data-bs-parent="#menuAccordion">
+                                    <div class="accordion-body text-center">
+
+                                        <!-- IMAGEN DEL MENÚ -->
+                                        <img src="images/menu-fiesta.jpg" alt="Menú de la fiesta" class="menu-image">
+
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
                     </div>
                 </div>
             </div>
         </section>
-
         <!-- ====== MAPA ====== -->
         <section class="section map-section">
             <div class="container d-flex justify-content-center">
@@ -236,3 +253,4 @@
 </body>
 
 </html>
+
