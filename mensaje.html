@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mensaje</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* =========================
+       FONDO Y TEXTURA
+       ========================= */
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background-color: #F2DED9;
+            /* mismo color base */
+            position: relative;
+            overflow-x: hidden;
+            font-family: sans-serif;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background-image: url("images/texture-pink.jpg");
+            background-repeat: repeat;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* Sección del video */
+.video-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+/* Contenedor responsivo 16:9 */
+.video-wrapper {
+  width: 100%;
+  max-width: 900px;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+/* iframe ocupa todo el contenedor */
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+        /* =========================
+       CAPA DE CONTENIDO
+       ========================= */
+
+        .content-layer {
+            position: relative;
+            z-index: 1;
+            /* todo el contenido va delante del fondo */
+            min-height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CONTENIDO DE LA PÁGINA MENSAJE -->
+    <div class="content-layer">
+        <div class="video-section">
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/49LcfSnsP_A?si=tgXXrJEU8ijb8_E_"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
