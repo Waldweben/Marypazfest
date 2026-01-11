@@ -43,27 +43,21 @@ main, .container, #app {
 
 /* Contenedor fijo del sticker */
 .sticker-wrapper {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  height: 100svh;          /* altura real del viewport móvil */
-  width: auto;
+  width: 100%;
+  height: 100%;
 
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-
-  padding: 2vh 2vw;
-  pointer-events: none;   /* decorativo, no bloquea clicks */
+  align-items: center;
+  justify-content: center;
 }
 
-/* Imagen del sticker */
 .sticker-wrapper img {
-  height: 90svh;          /* siempre cabe en vertical */
-  max-height: 90%;
+  max-width: 100%;
+  max-height: 80vh;     /* nunca se sale de la pantalla */
+  height: auto;
   width: auto;
 
-  object-fit: contain;    /* nunca se recorta */
+  object-fit: contain; /* nunca se recorta */
   display: block;
 }
 
@@ -117,10 +111,10 @@ main, .container, #app {
 
     <!-- COLUMNA IMAGEN -->
     <div class="col-md-8 d-flex align-items-center justify-content-center">
-      <div class="box image-box">
-        <img src="images/photo-sticker.png" alt="Foto del festejado">
-      </div>
-    </div>
+  <div class="sticker-wrapper">
+    <img src="images/photo-sticker.png" alt="Foto del festejado">
+  </div>
+</div>
 
     <!-- COLUMNA TEXTO -->
     <div class="col-md-4 d-flex align-items-center justify-content-center">
