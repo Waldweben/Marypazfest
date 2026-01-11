@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
+
   <title>Cumpleaños Mary Paz</title>
 
   <style>
@@ -55,6 +56,8 @@ main, .container, #app {
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .sticker-wrapper img {
@@ -108,8 +111,44 @@ main, .container, #app {
   margin-top: 1rem;
   font-size: clamp(1rem, 2.5vw, 1.4rem);
   color: #ffffff;
-   margin-top: 0.2rem;
 }
+.date {
+  margin-top: 0.2rem;
+}
+/* -----------------------------------------------------------------------------------------------------*/
+/* Columna imagen: crea el contexto */
+.image-column {
+  position: relative; /* CLAVE */
+  overflow: hidden;   /* evita scroll accidental */
+}
+
+/* Estilo base de blob */
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 0;         /* fondo */
+  opacity: 0.9;
+}
+
+/* Blob 1 */
+.blob-1 {
+  width: 420px;
+  height: 420px;
+  background: #CDA751;
+  top: 10%;
+  right: 15%;
+}
+
+/* Blob 2 */
+.blob-2 {
+  width: 280px;
+  height: 280px;
+  background: #CEBDC8;
+  bottom: 15%;
+  right: 5%;
+}
+
+
   </style>
 </head>
 <body>
@@ -123,13 +162,18 @@ main, .container, #app {
       <div class="row h-100">
 
         <!-- COLUMNA IMAGEN -->
-        <div class="col-md-8 d-flex align-items-center justify-content-center">
-          <div class="sticker-wrapper">
-            <img src="images/photo-sticker.png" alt="Foto del festejado">
-          </div>
-        </div>
-    <br>
-    <br>
+        <div class="col-md-8 image-column">
+
+  <!-- BLOBS (decoración) -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <!-- STICKER -->
+  <div class="sticker-wrapper">
+    <img src="images/photo-sticker.png" alt="Foto del festejado">
+  </div>
+
+</div>
         <!-- COLUMNA TEXTO -->
     <div class="col-md-4 d-flex align-items-center justify-content-center">
       <div class="box text-box">
@@ -149,7 +193,3 @@ main, .container, #app {
 
 </body>
 </html>
-
-
-
-
