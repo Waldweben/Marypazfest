@@ -18,6 +18,10 @@ body {
   position: relative;        /* necesario para que el contenido pueda ponerse encima */
   overflow-x: hidden;
 }
+.content-layer {
+  position: relative;
+  z-index: 1;
+}
 
 /* Capa de textura: no afecta interacciones y su opacidad se puede ajustar */
 body::before {
@@ -102,21 +106,27 @@ main, .container, #app {
   font-size: clamp(1rem, 2.5vw, 1.4rem);
   color: #ffffff;
 }
+
   </style>
 </head>
 <body>
 
-<div class="container-fluid h-100">
-  <div class="row h-100">
+<body>
 
-    <!-- COLUMNA IMAGEN -->
-    <div class="col-md-8 d-flex align-items-center justify-content-center">
-  <div class="sticker-wrapper">
-    <img src="images/photo-sticker.png" alt="Foto del festejado">
-  </div>
-</div>
+  <!-- CONTENEDOR DE CONTENIDO -->
+  <div class="content-layer">
 
-    <!-- COLUMNA TEXTO -->
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+
+        <!-- COLUMNA IMAGEN -->
+        <div class="col-md-8 d-flex align-items-center justify-content-center">
+          <div class="sticker-wrapper">
+            <img src="images/photo-sticker.png" alt="Foto del festejado">
+          </div>
+        </div>
+
+        <!-- COLUMNA TEXTO -->
     <div class="col-md-4 d-flex align-items-center justify-content-center">
       <div class="box text-box">
          <h1 class="title">
@@ -128,7 +138,9 @@ main, .container, #app {
     </div>
 
   </div>
-</div>
+
+</body>
+
 
 
 </body>
